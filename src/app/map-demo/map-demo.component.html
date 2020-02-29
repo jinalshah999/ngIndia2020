@@ -1,0 +1,17 @@
+<p>map-demo works!</p>
+
+<google-map height="500" width="100%" [center]="center" >
+
+  <map-marker #markerElem *ngFor="let item of markers"
+   [position]="item.position"
+  [title]="item.title"
+  [options]="item.options"
+  (mapClick)="onMarkerClick(markerElem,item.info)"
+  >
+
+  </map-marker>
+
+  <map-info-window  >
+    {{content}}
+  </map-info-window>
+</google-map>
